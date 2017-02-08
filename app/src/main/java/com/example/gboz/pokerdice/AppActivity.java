@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 public class AppActivity extends AppCompatActivity {
@@ -15,8 +16,11 @@ public class AppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app);
 
-        newGameButton = (Button) findViewById(R.id.newGameButton);
-        engineButton = (Button) findViewById(R.id.engineButton);
+        //disable the screensaver
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        newGameButton = (Button) findViewById(R.id.new_game_button);
+        engineButton = (Button) findViewById(R.id.engine_button);
 
         newGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
