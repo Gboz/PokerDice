@@ -18,12 +18,24 @@ public class AppActivity extends AppCompatActivity {
         newGameButton = (Button) findViewById(R.id.newGameButton);
         engineButton = (Button) findViewById(R.id.engineButton);
 
+        newGameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNewGameActivity(v);
+            }
+        });
+
         engineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadEngineActivity(v);
             }
         });
+    }
+
+    public void loadNewGameActivity(View view) {
+        Intent intent = new Intent(this, NewGameActivity.class);
+        startActivity(intent);
     }
 
     public void loadEngineActivity(View view) {
