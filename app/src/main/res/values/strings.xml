@@ -2,4 +2,7 @@
     <string name="app_name">PokerDice</string>
     <string name="new_game">New Game</string>
     <string name="engine">Engine</string>
+    <string name="languages">languages</string>
+    <string name="english">English</string>
+    <string name="polish">Polish</string>
 </resources>
