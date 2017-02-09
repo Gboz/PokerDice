@@ -18,7 +18,7 @@
         <activity android:name=".EngineActivity" />
         <activity android:name=".NewGameActivity" />
         <activity android:name=".PlayActivity" />
-        <activity android:name=".NewPlayerActivity"></activity>
+        <activity android:name=".NewPlayerActivity" />
     </application>
 
 </manifest>

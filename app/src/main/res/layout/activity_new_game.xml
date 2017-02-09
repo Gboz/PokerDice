@@ -34,5 +34,30 @@
         android:layout_marginBottom="36dp"
         android:id="@+id/play_button" />
 
+    <TextView
+        android:text="@string/select_players"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/new_player_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView2" />
+
+    <ListView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/play_button"
+        android:layout_below="@+id/textView2" />
+    <!--<ListView-->
+        <!--android:id="@+id/listViewTest"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="300dp"-->
+        <!--android:layout_below="@+id/textView2"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
 
 </RelativeLayout>

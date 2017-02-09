@@ -90,7 +90,7 @@
         android:id="@+id/updatePlayerBtn" />
 
     <Button
-        android:text="List Off"
+        android:text="Show All"
         android:onClick="btnClick"
         android:layout_width="150dp"
         android:layout_height="150dp"
