@@ -6,15 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
-import android.widget.Toast;
 
-public class CustomAdapter extends BaseAdapter {
+public class PlayersAdapter extends BaseAdapter {
     String[] names;
     Context context;
     LayoutInflater inflter;
-    String value;
 
-    public CustomAdapter(Context context, String[] names) {
+    public PlayersAdapter(Context context, String[] names) {
         this.context = context;
         this.names = names;
         inflter = (LayoutInflater.from(context));
@@ -40,23 +38,17 @@ public class CustomAdapter extends BaseAdapter {
         view = inflter.inflate(R.layout.list_view_items, null);
         final CheckedTextView simpleCheckedTextView = (CheckedTextView) view.findViewById(R.id.simpleCheckedTextView);
         simpleCheckedTextView.setText(names[position]);
-        // perform on Click Event Listener on CheckedTextView
+
         simpleCheckedTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (simpleCheckedTextView.isChecked()) {
-                    // set cheek mark drawable and set checked property to false
-
-                    value = "un-Checked";
                     simpleCheckedTextView.setCheckMarkDrawable(0);
                     simpleCheckedTextView.setChecked(false);
                 } else {
-                    // set cheek mark drawable and set checked property to true
-                    value = "Checked";
                     simpleCheckedTextView.setCheckMarkDrawable(R.drawable.checked);
                     simpleCheckedTextView.setChecked(true);
                 }
-                Toast.makeText(context, value, Toast.LENGTH_SHORT).show();
             }
         });
         return view;
