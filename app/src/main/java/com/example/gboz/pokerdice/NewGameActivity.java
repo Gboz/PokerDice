@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class NewGameActivity extends AppCompatActivity {
 
-    Button playButton;
+    Button playButton, newPlayerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +22,23 @@ public class NewGameActivity extends AppCompatActivity {
                 loadPlayActivity(v);
             }
         });
+
+        newPlayerButton = (Button) findViewById(R.id.new_player_button);
+        newPlayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNewPlayerActivity(v);
+            }
+        });
     }
 
     public void loadPlayActivity(View view) {
         Intent intent = new Intent(this, PlayActivity.class);
+        startActivity(intent);
+    }
+
+    public void loadNewPlayerActivity(View view) {
+        Intent intent = new Intent(this, NewPlayerActivity.class);
         startActivity(intent);
     }
 }

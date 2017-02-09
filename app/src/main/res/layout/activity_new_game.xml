@@ -11,6 +11,18 @@
     tools:context="com.example.gboz.pokerdice.NewGameActivity">
 
     <Button
+        android:text="@string/new_player"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/new_player_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/play_button"
+        android:layout_alignStart="@+id/play_button"
+        android:layout_marginTop="36dp"
+        android:layout_alignRight="@+id/play_button"
+        android:layout_alignEnd="@+id/play_button" />
+
+    <Button
         android:text="@string/play"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -21,4 +33,6 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="36dp"
         android:id="@+id/play_button" />
+
+
 </RelativeLayout>
