@@ -28,7 +28,7 @@ public class NewPlayerActivity extends AppCompatActivity {
         name = (EditText) findViewById(R.id.playerNameEditText);
         textView = (TextView) findViewById(R.id.textView);
 
-        controller = new DBPlayerController(this, "", null, 1);
+        controller = new DBPlayerController(this, null, 1);
     }
 
     public void btnClick(View view) {

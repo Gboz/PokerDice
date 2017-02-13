@@ -7,13 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.TextView;
 
-/**
- * Created by gbole on 09.02.2017.
- */
+import java.util.ArrayList;
 
 public class DBPlayerController extends SQLiteOpenHelper {
 
-    public DBPlayerController(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DBPlayerController(Context context, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "TEST.db", factory, version);
     }
 
@@ -48,5 +46,17 @@ public class DBPlayerController extends SQLiteOpenHelper {
         while (cursor.moveToNext()) {
             textView.append(cursor.getString(1) + "\n");
         }
+    }
+
+    public String[] listAllPlayersToString(String[] names) {
+        Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM PLAYERS", null);
+        ArrayList<String> playerList = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            playerList.add(cursor.getString(1));
+        }
+        names = new String[playerList.size()];
+        names = playerList.toArray(names);
+
+        return names;
     }
 }

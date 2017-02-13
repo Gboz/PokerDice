@@ -8,16 +8,22 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class NewGameActivity extends AppCompatActivity {
 
     Button playButton, newPlayerButton;
-    String[] names = {"Mietek", "Agaciuga", "Pepi B", "Roman Boskyyy"};
+    String[] names;
+    DBPlayerController controller;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
+
+        controller = new DBPlayerController(this, null, 1);
+        names = controller.listAllPlayersToString(names);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         PlayersAdapter playersAdapter = new PlayersAdapter(getApplicationContext(), names);
@@ -38,6 +44,7 @@ public class NewGameActivity extends AppCompatActivity {
                 loadNewPlayerActivity(v);
             }
         });
+
     }
 
     @Override
