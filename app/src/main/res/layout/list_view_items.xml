@@ -12,6 +12,4 @@
         android:textColor="#000"
         android:text="Checked Text View Example" />
 
-
-
 </LinearLayout>

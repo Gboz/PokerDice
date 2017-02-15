@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 
 public class PlayersAdapter extends BaseAdapter {
+    int limit = 0;
     String[] names;
     Context context;
     LayoutInflater inflter;
@@ -45,9 +46,15 @@ public class PlayersAdapter extends BaseAdapter {
                 if (simpleCheckedTextView.isChecked()) {
                     simpleCheckedTextView.setCheckMarkDrawable(0);
                     simpleCheckedTextView.setChecked(false);
+                    limit--;
+                    System.out.println("TEST" + limit);
                 } else {
-                    simpleCheckedTextView.setCheckMarkDrawable(R.drawable.checked);
-                    simpleCheckedTextView.setChecked(true);
+                    if (limit < 2) {
+                        simpleCheckedTextView.setCheckMarkDrawable(R.drawable.checked);
+                        simpleCheckedTextView.setChecked(true);
+                        limit++;
+                    }
+                    System.out.println("TEST" + limit);
                 }
             }
         });
